@@ -1,180 +1,41 @@
-1. create your new project directory and `cd` into it 
-2. `git init`
-3. create a simple `.gitignore`
-        
-        # .gitignore
+# Crazy Crowded Game
+***
 
-        /node_modules/
-4. `npm init` and follow prompts
-5. install dev dependencies
-   
-        npm install @babel/core @babel/preset-env autoprefixer babel-loader css-loader fibers file-loader mini-css-extract-plugin node-sass postcss-loader sass sass-loader style-loader url-loader webpack webpack-cli webpack-dev-server webpack-merge --save-dev
+## Description
+Crazy Crowded is a driving game in a crowded road. You have to use all your driving skills to stay safe and to avoid collisions by speeding up or slowing down your speed and also by making some manouvring to avoid other vehicles a long the road. 
 
-6. create basic `/src` subdirectory file structure
+## Overview
+You can choose your car at the beginning of the game.
+You get more points when you avoid other vehicles.
+Game gets harder and faster when you avoid more vehicles.
+Your score is shown n the side of the screen.
+The is over when you make a collision with another vehicles.
 
-        - src/
-            - index.js
-            styles/
-                - index.scss
-            scripts/
+## Functionality & MVP
+With this driving game, the player has to stay safe and doesn't make any collisions. 
 
-7. In your root directory, create `webpack.common.js`
+* Start/Restart game.
+* Choose a car to drive.
+* Change lanes, speed up, slow down and avoid other vehicles..
+* Pause/Resume game.
+* Scoreboard keeps player's score
+* the game gets harder when the player gets more points in the scoreboard.
+* Collisons with cars on the road ends the game.
 
-    ```JavaScript
-    // webpack.common.js
+## Spec Details
+* Player can move the car in the four directions by using the arrow keys.
+* Points increase when the player avoids other vehicles.
+* Game ends when the player's vehicle has a collision with any other vehicle.
+* Win the game is to stay safe the logest posibble time and to get the biggest possible score.
 
-    const path = require("path");
-    const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-    const outputDir = "./dist";
+## Timeline
+* Day#1 -> Design and create the game logic platform. 
+* Day#2 -> Functionality and design
+* Day#3 -> Additional functionality.
 
-    module.exports = {
-    entry: path.resolve(__dirname, "src", "index.js"), //
-    output: {
-        path: path.join(__dirname, outputDir),
-        filename: "[name].js",
-        publicPath: "/dist/"
-    },
-    resolve: {
-        extensions: [".js"] // if we were using React.js, we would include ".jsx"
-    },
-    module: {
-        rules: [
-        {
-            test: /\.js$/, // if we were using React.js, we would use \.jsx?$/
-            use: {
-            loader: "babel-loader",
-            options: {
-                presets: ["@babel/preset-env"],
-                plugins: ["@babel/plugin-proposal-optional-chaining"],
-                exclude: /node_modules/
-            } // if we were using React.js, we would include "react"
-            }
-        },
-        {
-            test: /\.css$/,
-            use: [
-            {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                publicPath: "../",
-                hmr: process.env.NODE_ENV === "development"
-                }
-            },
-            "css-loader",
-            "postcss-loader"
-            ]
-        },
-        {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: [
-            {
-                loader: "file-loader",
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                name: "[name].[ext]",
-                outputPath: "images/",
-                publicPath: "images/"
-                }
-            }
-            ]
-        },
-        {
-            test: /\.scss/,
-            use: [
-            {
-                loader: MiniCssExtractPlugin.loader,
-                options: {
-                // you can specify a publicPath here
-                // by default it uses publicPath in webpackOptions.output
-                publicPath: "../",
-                hmr: process.env.NODE_ENV === "development"
-                }
-            },
-            "css-loader",
-            "sass-loader",
-            "postcss-loader"
-            ]
-        }
-        ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // all options are optional
-        filename: "[name].css",
-        chunkFilename: "[id].css",
-        ignoreOrder: false // Enable to remove warnings about conflicting order
-        }),
-        require("autoprefixer")
-    ]
-    };
+## Languages and Technologies
+* Vanilla JavaScript
+* HTML5/ CSS3
 
-    ```
-
-8. Create `webpack.dev.js`
-
-    ```JavaScript
-    // wepack.dev.js
-    const merge = require("webpack-merge");
-    const common = require("./webpack.common.js");
-
-    module.exports = merge(common, {
-        mode: "development",
-        devtool: "inline-source-map",
-        devServer: {
-            contentBase: "./",
-            watchContentBase: true,
-            open: "Google Chrome"
-        }
-    });
-    ```
-
-9. Create `webpack.prod.js`
-
-    ```JavaScript
-    // webpack.prod.js
-    const merge = require("webpack-merge");
-    const common = require("./webpack.common.js");
-
-    module.exports = merge(common, {
-        mode: "production",
-        devtool: "source-map"
-    });
-    ```
-
-10. create `postcss.config.js`
-
-    ```JavaScript
-    // postcss.config.js
-    module.exports = {
-        plugins: {
-            autoprefixer: {}
-        }
-    };
-    ```
-
-11. add `browserlist` key and update `scripts` in `package.json`
-
-    ```JavaScript
-    // package.json
-    "browserslist": [
-        "last 1 version",
-        "> 1%",
-        "maintained node versions",
-        "not dead"
-    ],
-    "scripts": {
-        "start": "webpack-dev-server --config webpack.dev.js",
-        "webpack:watch": "webpack --watch --config webpack.dev.js",
-        "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
-    },
-    ```
-
-12. create `index.scss` in `/src/styles`
-
-13. create `index.js` in `/src` directory and import style `/src/styles/index.scss`
-
-14. create `index.html` and import `dist/main.css` and `dist/main.js` appropriately
+## Wireframe
+https://docs.google.com/document/d/1_ar-efZgB2M7ES1yR8AsiVYzVi1aPQFxcsUBysNKVdw/edit?usp=sharing
