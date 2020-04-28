@@ -1,13 +1,29 @@
 import "./styles/index.scss";
 let canvas = document.querySelector("#canvas");
-let context = canvas.getContext("2d");
-let road = new Image;
-road.src = "./images/road.png";
-road.onload = () => {
-  requestAnimationFrame(gameLoop);
-}
-let yOffset = -512;
+if (canvas.getContext) {
+  // alert(canvas.height);
+  let context = canvas.getContext('2d');
 
+  // context.fillStyle = ("yellow");
+  // context.fillRect(0, 0, canvas.width, canvas.height);
+  
+  let road = new Image;
+  road.src = "./images/road.png";
+  alert(road.height);
+  context.drawImage(road, 0, 0);
+}
+
+
+// //alert1
+// alert(road.clientHeight);
+
+road.onload = () => {
+  //alert2
+  // alert(road.clientHeight);
+}
+
+
+// requestAnimationFrame(gameLoop);
 function gameLoop() {
   context.drawImage(road, 0, 0);
   requestAnimationFrame(gameLoop);
