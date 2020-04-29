@@ -14,7 +14,7 @@ export default class Game{
 
         this.trafficCar=[];
         // new this.trafficCar(this);
-        setInterval(()=>this.populateTraffic(),5000);
+        setInterval(()=>this.populateTraffic(),3000);
     }
 
     populateTraffic(){
