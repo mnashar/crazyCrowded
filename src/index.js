@@ -1,62 +1,30 @@
-
-
-
-
 import "./styles/index.scss";
 let canvas = document.querySelector("#canvas");
-if (canvas.getContext) {
+// if (canvas.getContext) {
   
-  let context = canvas.getContext('2d');
-  let road = new Image;
-  road.src ="src/images/road.png";
-  road.height="430";
-  // road.src = "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&imageId=1206870-847__1&recipeName=350";
-  road.onload = () => {
-    
-    context.drawImage(road, 0, 0);
-  }
+let context = canvas.getContext('2d');
+let road = new Image;
+road.src ="src/images/road_small.png";
+// road.height="430";
+road.onload = () => {
   
-}
-
-
-
-
-
-
-
-
-
-
-// //alert1
-// alert(road.clientHeight);
-
-// road.onload = () => {
-//   //alert2
-//   // alert(road.clientHeight);
-// }
-
-
-// requestAnimationFrame(gameLoop);
-function gameLoop() {
   context.drawImage(road, 0, 0);
   requestAnimationFrame(gameLoop);
+
+  // gameLoop();
 }
+  
+// }
 
-// const testObj = {
-//   key1: "hi",
-//   key2: {
-//     key3: "Hello",
-//   },
-// };
+let yOffset=-426;
 
-// const greeting = testObj?.key2?.key3 || testObj.key1;
-// window.addEventListener("DOMContentLoaded", () => {
-//   document.body.classList.add("center");
-//   const card = document.createElement("div");
-//   card.classList.add("card", "center");
-//   card.innerHTML = `<h2>${greeting} World! Mannoooo</h2>`;
-//   document.body.append(card);
-//   const imgCard = document.createElement("div");
-//   imgCard.classList.add("card", "center", "image-card");
-//   document.body.appendChild(imgCard);
-// });
+function gameLoop(){
+
+  if(yOffset>=0) yOffset=-426;
+
+  context.drawImage(road,0,yOffset);
+  context.drawImage(road, 0, yOffset + 426);
+  context.drawImage(road, 0, yOffset+852);
+  yOffset+=6git ;
+  requestAnimationFrame(gameLoop);
+}
