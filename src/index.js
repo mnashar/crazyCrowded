@@ -1,26 +1,39 @@
+
+
+
+
 import "./styles/index.scss";
 let canvas = document.querySelector("#canvas");
 if (canvas.getContext) {
-  // alert(canvas.height);
-  let context = canvas.getContext('2d');
-
-  // context.fillStyle = ("yellow");
-  // context.fillRect(0, 0, canvas.width, canvas.height);
   
+  let context = canvas.getContext('2d');
   let road = new Image;
-  road.src = "./images/road.png";
-  alert(road.height);
-  context.drawImage(road, 0, 0);
+  road.src ="src/images/road.png";
+  road.height="430";
+  // road.src = "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&imageId=1206870-847__1&recipeName=350";
+  road.onload = () => {
+    
+    context.drawImage(road, 0, 0);
+  }
+  
 }
+
+
+
+
+
+
+
+
 
 
 // //alert1
 // alert(road.clientHeight);
 
-road.onload = () => {
-  //alert2
-  // alert(road.clientHeight);
-}
+// road.onload = () => {
+//   //alert2
+//   // alert(road.clientHeight);
+// }
 
 
 // requestAnimationFrame(gameLoop);
