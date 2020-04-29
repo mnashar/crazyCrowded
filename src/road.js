@@ -13,7 +13,8 @@ export default class Road {
         this.context.drawImage(this.road, 0, this.yOffset);
         this.context.drawImage(this.road, 0, this.yOffset + 426);
         this.context.drawImage(this.road, 0, this.yOffset + 852);
-        this.yOffset += 6;
+        // this.yOffset += 6;
+        this.yOffset += this.game.playerCar.speed/5;
     }
    
 }
