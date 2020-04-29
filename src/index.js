@@ -11,10 +11,10 @@ road.onload = () => {
   context.drawImage(road, 0, 0);
   requestAnimationFrame(gameLoop);
 
-  // gameLoop();
+  
 }
   
-// }
+
 
 let yOffset=-426;
 
@@ -25,6 +25,6 @@ function gameLoop(){
   context.drawImage(road,0,yOffset);
   context.drawImage(road, 0, yOffset + 426);
   context.drawImage(road, 0, yOffset+852);
-  yOffset+=6git ;
+  yOffset+=6;
   requestAnimationFrame(gameLoop);
 }
