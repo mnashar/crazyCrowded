@@ -33,6 +33,8 @@ export default class playerCar{
         } else{
             this._speed=speed;
         }
+
+        document.querySelector(".speedo-meter .speed").innerHTML=this._speed;
     }
     get speed(){
         return this._speed;
