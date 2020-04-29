@@ -28,8 +28,8 @@ export default class playerCar{
     set speed(speed){
         if(speed>=this.maxSpeed){
             this._speed=this.maxSpeed;
-        } else if(speed<=0){
-            this._speed=0;
+        } else if(speed<=25){
+            this._speed=25;
         } else{
             this._speed=speed;
         }

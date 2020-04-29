@@ -14,7 +14,7 @@ export default class TrafficCar{
     }
 
     update(){
-        this.positionY += this.speed;
+        this.positionY += this.game.playerCar.speed/5+this.speed;
         this.context.drawImage(this.car, this.lanePosX[this.lane], this.positionY, this.car.width / 2, this.car.height / 2);
         
         if(this.positionY>=700){
