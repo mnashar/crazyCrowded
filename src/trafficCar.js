@@ -11,7 +11,15 @@ export default class TrafficCar{
         this.speed=(Math.random()*7) +3;
         this.lane=Math.floor(Math.random()*3);
         this.lanePosX=[90,170,255,340];
+        this.length=100;
+        this.length = 100;
     }
+
+    get positionX(){
+        return this.lanePosX[this.lane];
+    }
+
+   
 
     update(){
         this.positionY += this.game.playerCar.speed/5+this.speed;

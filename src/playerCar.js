@@ -10,6 +10,16 @@ export default class playerCar{
 
         this.car=new Image;
         this.car.src = "src/images/Audi.png";
+        this.length=100;
+        this.width = 100;
+    }
+
+    get positionX(){
+        return this._positionX;
+    }
+
+    get positionY(){
+        return this._positionY;
     }
 
     moveLeft(){

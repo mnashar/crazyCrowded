@@ -2,6 +2,7 @@ import Road from "./road";
 import PlayerCar from "./playerCar";
 import CarController from "./carController";
 import TrafficCar from "./trafficCar";
+import {isCollide} from "./utilities";
 export default class Game{
     constructor(context){
         this.context = context;
@@ -13,7 +14,6 @@ export default class Game{
         });
 
         this.trafficCar=[];
-        // new this.trafficCar(this);
         setInterval(()=>this.populateTraffic(),3000);
     }
 
@@ -27,5 +27,9 @@ export default class Game{
         this.trafficCar.forEach(trafficCar=>{
             trafficCar.update();
         });
+
+        if(isCollide(this.playerCar,this.trafficCar)){
+            // alert("Accident!");
+        }
     }
 }
