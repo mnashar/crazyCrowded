@@ -35,6 +35,11 @@ export default class playerCar{
         if (this._positionX >= 370) this._positionX = 370;
     }
 
+    resetPosition(){
+        this._positionX = 254;
+        this._positionY = 280;
+    }
+
     set speed(speed){
         if(speed>=this.maxSpeed){
             this._speed=this.maxSpeed;

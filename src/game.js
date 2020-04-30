@@ -29,6 +29,18 @@ export default class Game{
         let trafficCar=new TrafficCar(this);
         this.trafficCar.push(trafficCar);
     }
+    tryAgain(e){
+        console.log(e.keyCode);
+        if(e.keyCode!==13){
+            return;
+        }
+        this.trafficCar=[];
+        this.playerCar.resetPosition();
+        this._paused=false;
+        let screenTryAgain=document.querySelector(".try-again");
+        screenTryAgain.style.display="none";
+        document.onkeydown=null;
+    }
     update(){
         if (this._paused) return;
 
@@ -42,6 +54,11 @@ export default class Game{
             this._paused=true;
             this.crash.muted = false;
             this.crash.play();
+
+            let screenTryAgain=document.querySelector(".try-again");
+            screenTryAgain.style.display="block";
+
+            document.onkeydown=e=>this.tryAgain(e);
         }
     }
 }
