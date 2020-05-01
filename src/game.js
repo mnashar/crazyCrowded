@@ -3,11 +3,13 @@ import PlayerCar from "./playerCar";
 import CarController from "./carController";
 import TrafficCar from "./trafficCar";
 import {isCollide} from "./utilities";
+import Scoreboard from "./scoreboard";
 export default class Game{
     constructor(context){
         this.context = context;
         this.road=new Road(this);
         this.playerCar=new PlayerCar(this);
+        this.scoreboard=new Scoreboard(this);
         new CarController({
             road:this.road,
             playerCar:this.playerCar
@@ -46,6 +48,7 @@ export default class Game{
 
         this.road.update();
         this.playerCar.update();
+        this.scoreboard.update();
         this.trafficCar.forEach(trafficCar=>{
             trafficCar.update();
         });
@@ -53,7 +56,7 @@ export default class Game{
         if(isCollide(this.playerCar,this.trafficCar)){
             this._paused=true;
             this.crash.muted = false;
-            this.crash.play();
+            // this.crash.play();
 
             let screenTryAgain=document.querySelector(".try-again");
             screenTryAgain.style.display="block";
