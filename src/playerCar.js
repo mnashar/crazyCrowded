@@ -26,13 +26,13 @@ export default class playerCar{
         this._positionX -=20;
         // left 200
         //right 170
-        if(this._positionX<=55) this._positionX=55;
+        if(this._positionX<=90) this._positionX=90;
     }
     moveRight() {
         this._positionX += 20;
         // left 200
         //right 170
-        if (this._positionX >= 370) this._positionX = 370;
+        if (this._positionX >= 410) this._positionX = 410;
     }
 
     resetPosition(){
