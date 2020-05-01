@@ -9,6 +9,7 @@ export default class Scoreboard{
 
     update(){
         this.updateTime();
+        
     }
 
     updateTime(){

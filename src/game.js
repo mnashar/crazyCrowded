@@ -36,6 +36,10 @@ export default class Game{
         if(e.keyCode!==13){
             return;
         }
+        // this.timeMeter = document.querySelector(".time-meter .time");
+        // this.timeMeter.innerHTML = "00:00:00:00";
+        this.scoreboard.startTime = Date.now();
+
         this.trafficCar=[];
         this.playerCar.resetPosition();
         this._paused=false;
@@ -44,6 +48,7 @@ export default class Game{
         document.onkeydown=null;
     }
     update(){
+        // this.scoreboard.updateTime();
         if (this._paused) return;
 
         this.road.update();
@@ -57,6 +62,10 @@ export default class Game{
             this._paused=true;
             this.crash.muted = false;
             // this.crash.play();
+
+            
+
+        
 
             let screenTryAgain=document.querySelector(".try-again");
             screenTryAgain.style.display="block";
