@@ -32,20 +32,18 @@
         height:inherit;
         position: relative;;
       }
-      #scoreboard .inner-board .fuel-meter{
+      #scoreboard .inner-board .speedo-meter{
         position: absolute;;
         left: 10px;
         top: 10px;
         display: flex;
       }
-      #scoreboard .inner-board .fuel-meter .fuel-level-conainer{
-        width:100px;
-        padding: 0px 5px;
+      #scoreboard .inner-board .speedo-meter .speed{
+       width:30px;
+        text-align:right;
       }
-      #scoreboard .inner-board .fuel-meter .fuel-level-conainer .fuel-level{
-        width:50px;
-        height: 20px;
-        background-color: green;
+      #scoreboard .inner-board .speedo-meter.speed .unit{
+         margin-left: 5px;
       }
       .meter-box{
         background-color: rgba(0,0,0,0.5);
@@ -64,20 +62,20 @@
         margin-right: 10px;
       }
 
-      #scoreboard .inner-board .speedo-meter{
+      /* #scoreboard .inner-board .speedo-meter{
         position:absolute;
         left:10px;
         top:50px;
         display: flex;
-      }
+      } */
 
-      #scoreboard .inner-board .speedo-meter .speed{
+      /* #scoreboard .inner-board .speedo-meter .speed{
         width:30px;
         text-align:right;
-      }
-      #scoreboard .inner-board .speedo-meter .unit{
+      } */
+      /* #scoreboard .inner-board .speedo-meter .unit{
         margin-left: 5px;;
-      }
+      } */
 
       #scoreboard .inner-board .distance-meter{
         position:absolute;
@@ -125,12 +123,12 @@
 
     <div id="scoreboard">
       <div class="inner-board">
-        <div class="fuel-meter meter-box">
+        <!-- <div class="fuel-meter meter-box">
           <div class="label">Fuel</div>
           <div class="fuel-level-container">
             <div class="fuel-level"></div>
           </div>
-        </div>
+        </div> -->
 
         <div class="time-meter meter-box">
           <div class="label">
@@ -144,6 +142,9 @@
 
 
         <div class="speedo-meter meter-box">
+          <div class="label">
+            Speed:
+          </div>
           <div class="speed">
             0
           </div>
@@ -153,14 +154,14 @@
         </div>
 
 
-        <div class="distance-meter meter-box">
+        <!-- <div class="distance-meter meter-box">
           <div class="distance">
             100 Miles
           </div>
           <div class="label">
             LEFT
           </div>
-        </div>
+        </div> -->
 
 
       </div>
