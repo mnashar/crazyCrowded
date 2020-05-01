@@ -3,7 +3,7 @@ export default class playerCar{
     constructor(game){
         this.game=game;
         this.context=this.game.context;
-        this._positionX=254;
+        this._positionX = 292;
         this._positionY = 280;
         this._speed=25;
         this.maxSpeed=120;
@@ -36,7 +36,7 @@ export default class playerCar{
     }
 
     resetPosition(){
-        this._positionX = 254;
+        this._positionX = 292;
         this._positionY = 280;
     }
 

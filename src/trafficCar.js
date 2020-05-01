@@ -4,13 +4,13 @@ export default class TrafficCar{
         this.context=this.game.context;
         this.car=new Image;
         
-        this.carNo=Math.round(Math.random()*7)+1;
+        this.carNo=Math.round(Math.random()*7);
         this.car.src = "src/images/car" + this.carNo+".png";
         this.positionY=-120;
         this.positionY=(Math.random()*500)*-1;
         this.speed=(Math.random()*7) +3;
-        this.lane=Math.floor(Math.random()*3);
-        this.lanePosX=[90,170,255,340];
+        this.lane=Math.floor(Math.random()*4);
+        this.lanePosX = [125, 205, 292,375];
         this.length=100;
         this.length = 100;
     }
