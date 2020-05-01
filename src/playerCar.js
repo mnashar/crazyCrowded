@@ -10,8 +10,8 @@ export default class playerCar{
 
         this.car=new Image;
         this.car.src = "src/images/Audi.png";
-        this.length=100;
-        this.width = 100;
+        this.length=110;
+        this.width = 42;
     }
 
     get positionX(){
