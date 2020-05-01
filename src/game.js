@@ -10,14 +10,16 @@ export default class Game{
         this.road=new Road(this);
         this.playerCar=new PlayerCar(this);
         this.scoreboard=new Scoreboard(this);
-        new CarController({
-            road:this.road,
-            playerCar:this.playerCar
-        });
+        this.paused=false;
+        
+        // new CarController({
+        //     road:this.road,
+        //     playerCar:this.playerCar
+        // });
+        this.CarController=new CarController(this);
 
         this.trafficCar=[];
         setInterval(()=>this.populateTraffic(),3000);
-        this._paused=false;
 
         this.crash = new Audio("src/sounds/carCrash.mp3");
         this.crash.autoplay=false;
@@ -26,13 +28,12 @@ export default class Game{
     }
 
     populateTraffic(){
-        if(this._paused) return;
+        if(this.paused) return;
 
         let trafficCar=new TrafficCar(this);
         this.trafficCar.push(trafficCar);
     }
     tryAgain(e){
-        console.log(e.keyCode);
         if(e.keyCode!==13){
             return;
         }
@@ -41,13 +42,13 @@ export default class Game{
 
         this.trafficCar=[];
         this.playerCar.resetPosition();
-        this._paused=false;
+        this.paused=false;
         let screenTryAgain=document.querySelector(".try-again");
         screenTryAgain.style.display="none";
         document.onkeydown=null;
     }
     update(){
-        if (this._paused) return;
+        if (this.paused) return;
 
         this.road.update();
         this.playerCar.update();
@@ -57,7 +58,7 @@ export default class Game{
         });
 
         if(isCollide(this.playerCar,this.trafficCar)){
-            this._paused=true;
+            this.paused=true;
             this.crash.muted = false;
 
             let screenTryAgain=document.querySelector(".try-again");

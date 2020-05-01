@@ -10,8 +10,6 @@ export function isCollide(playerCar,trafficCar){
 
         
 
-        debugger;
-
         if (trafficCar[i].positionY >= yRange1 && trafficCar[i].positionY <= yRange2 && 
             ((trafficCarPositionX >= xRange1 && trafficCarPositionX <=xRange2) 
            || 
