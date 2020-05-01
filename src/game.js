@@ -42,6 +42,7 @@ export default class Game{
 
         this.trafficCar=[];
         this.playerCar.resetPosition();
+        this.playerCar.speed=0;
         this.paused=false;
         let screenTryAgain=document.querySelector(".try-again");
         screenTryAgain.style.display="none";
