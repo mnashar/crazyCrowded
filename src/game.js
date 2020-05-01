@@ -25,6 +25,7 @@ export default class Game{
         this.crash.autoplay=false;
         this.crash.muted=true;
         
+        
     }
 
     populateTraffic(){
@@ -61,7 +62,7 @@ export default class Game{
         if(isCollide(this.playerCar,this.trafficCar)){
             this.paused=true;
             this.crash.muted = false;
-
+            this.crash.play();
             let screenTryAgain=document.querySelector(".try-again");
             screenTryAgain.style.display="block";
 
