@@ -2,7 +2,7 @@
 ***
 
 ## Description
-Crazy Crowded is a driving game in a crowded road. You have to use all your driving skills to stay safe and to avoid collisions by speeding up or slowing down your speed and also by making some manouvring to avoid other vehicles a long the road. 
+Crazy Crowded is a driving game in a busy road. You must use all of your driving skills to stay safe and avoid collisions by accelerating or slowing your speed and also by doing some maneuvers to avoid other vehicles along the way.
 
 ## See it alive
 https://mnashar.github.io/crazyCrowded/
