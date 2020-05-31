@@ -17,8 +17,8 @@ export default class TrafficCar{
 
         // this.length = 110;
         // this.width = 42;
-        this.length = 55;
-        this.width = 21;
+        this.length = 73;
+        this.width = 28;
     }
 
     get positionX(){

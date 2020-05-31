@@ -14,8 +14,10 @@ export default class playerCar{
         // this.car.width = 21;
         // this.length=110;
         // this.width = 42;
-        this.length = 55;
-        this.width = 21;
+        // this.length = 55;
+        // this.width = 21;
+        this.length = 73;
+        this.width = 28;
     }
 
     get positionX(){
@@ -40,8 +42,8 @@ export default class playerCar{
     }
 
     resetPosition(){
-        this._positionX = 292;
-        this._positionY = 280;
+        this._positionX = 299;
+        this._positionY = 340;
     }
 
     set speed(speed){
