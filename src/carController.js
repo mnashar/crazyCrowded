@@ -1,10 +1,4 @@
 export default class carController{
-    // constructor(options){
-    //     this.road=options.road;
-    //     this.playerCar=options.playerCar;
-
-    //     this.init();
-    // }
 
     constructor(game){
         // debugger;
@@ -32,9 +26,34 @@ export default class carController{
                     if (!this.game.paused)
                     this.playerCar.speed -= 5;
                     break;
+                case 13:
+                    //here
+                    // this.paused = !(this.paused );
+                    // this.game.pauseUnpause();
+                    // pauseUnpause();
+                    break;
                 default:
                     break;
             }
         });
     }
+
+    
 }
+
+////////////////////////////////////////////////
+/*
+if (e.keyCode !== 13) {
+    return;
+}
+//Rerun it
+this.scoreboard.startTime = Date.now();
+
+this.trafficCar = [];
+this.playerCar.resetPosition();
+this.playerCar.speed = 0;
+this.paused = false;
+let screenTryAgain = document.querySelector(".try-again");
+screenTryAgain.style.display = "none";
+document.onkeydown = null;
+*/

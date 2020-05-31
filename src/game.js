@@ -12,14 +12,12 @@ export default class Game{
         this.scoreboard=new Scoreboard(this);
         this.paused=false;
         
-        // new CarController({
-        //     road:this.road,
-        //     playerCar:this.playerCar
-        // });
+       
         this.CarController=new CarController(this);
 
         this.trafficCar=[];
-        setInterval(()=>this.populateTraffic(),3000);
+        this.carNos=[];
+        setInterval(()=>this.populateTraffic(),2000);
 
         this.crash = new Audio("src/sounds/carCrash.mp3");
         this.crash.autoplay=false;
@@ -28,11 +26,31 @@ export default class Game{
         
     }
 
+    // pauseUnpause() {
+    //     if (this.paused) {
+    //         this.game.playerCar.speed = 0;
+    //         let screenTryAgain = document.querySelector(".try-again");
+    //         screenTryAgain.style.display = "Block";
+    //         // this.game.tra
+    //     }
+    //     else {
+
+    //     }
+    // }
+
     populateTraffic(){
         if(this.paused) return;
 
         let trafficCar=new TrafficCar(this);
-        this.trafficCar.push(trafficCar);
+         console.log("array: "+this.carNos);
+        if (this.carNos.indexOf(trafficCar.lane)==-1){
+             console.log("carNo: "+trafficCar.carNo);
+            this.trafficCar.push(trafficCar);
+            this.carNos.push(trafficCar.lane);
+        }
+        else{
+            console.log("Existing carNo: " + trafficCar.carNo+"  Lane: "+trafficCar.lane);
+        }
     }
     tryAgain(e){
         if(e.keyCode!==13){
@@ -49,6 +67,8 @@ export default class Game{
         screenTryAgain.style.display="none";
         document.onkeydown=null;
     }
+
+
     update(){
         if (this.paused) return;
 
