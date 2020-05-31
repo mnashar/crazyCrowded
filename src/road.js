@@ -5,6 +5,7 @@ export default class Road {
         this.yOffset = -426;
         this.road = new Image;
         this.road.src = "src/images/road_small.png";
+        
     }
 
     update(){
@@ -15,6 +16,7 @@ export default class Road {
         this.context.drawImage(this.road, 0, this.yOffset + 852);
         // this.yOffset += 6;
         this.yOffset += this.game.playerCar.speed/5;
+        // this.road.style.borderRadius = "10px";
     }
    
 }
