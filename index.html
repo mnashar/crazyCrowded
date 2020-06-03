@@ -98,7 +98,20 @@
         /* width: inherit;
         height: inherit; */
         background-color: gray;
-        opacity: 0.8;
+        opacity: 0.9;
+      }
+
+      .try-again-container{
+        
+        position:absolute;
+        
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: inherit;
+        height: inherit; */
+        background-color: gray;
+        opacity: 0.9;
       }
 
       .try-again{
@@ -107,29 +120,89 @@
         display: none;
         width:240px;
         height:384px;
+        /* position: absolute;
+        right: 50%;
+        top: 20%; */
         
       }
 
       .instructions{
-        background-image: url('src/images/carCrash.png');
-        opacity: 1;
-        display: none;
-        width:240px;
-        height:384px;
+
+        background-image: url('src/images/road_small.png');
+        display: block;
+        width:551px;
+        height:426px;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+
         
       }
 
-      .title{
-         /* color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+      .instructions-text{
+        padding-top: 30px;
         color: white;
-  text-shadow: 2px 2px 4px #ff0000;
-  font-size: 2.2em;
-  /* position:absolute; */
-  top:2px;
-  /* left: 30% */
-  text-align: center;
-  z-index: -99999999;
+        text-shadow: 4px 4px 6px #000000;
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      .title{
+        color: white;
+        text-shadow: 2px 2px 4px #ff0000;
+        font-size: 2.2em;
+        top:2px;
+        text-align: center;
+      }
+
+      .choose-car{
+        background-color:rgba(0,0,0,0.9);
+       display: block;
+        /* width:551px;
+        height:426px; */
+        position:absolute;
+        width:400px;
+        top:90%;
+        text-align: center;
+        transform:translate(-50%,-15%);
+        border-radius: 5px;
+
+box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;        
+        
+      }
+
+      .choose-car-list{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        align-items: center;
+        
+      }
+
+      .choose-car-list-item{
+        /* background: tomato; */
+        /* padding: 5px; */
+        width: 33%px; 
+        /* height: 150px; */
+        margin-top: 10px;
+        /* line-height: 150px; */
+        color: white;
+        font-weight: bold;
+        font-size: 4em;
+        text-align: center;
+        font-weight:bold;
+        /* vertical-align: middle; */
+        top:50%;
+      }
+
+      .choose-car-list-item:hover{
+        color: red;
+        text-shadow: 0 0 10px #00FF9C;
+        cursor: pointer;
       }
 
 
@@ -169,7 +242,7 @@
             Speed:
           </div>
           <div class="speed">
-            0
+            25
           </div>
           <div class="unit">
             M/H
@@ -190,18 +263,47 @@
       </div>
     </div>
 
-    <div class="messages">
+    <div class="try-again-container">
       <div class="try-again">
-
-      </div>
-
-      <div class="instructions">
-      
+  
       </div>
     </div>
+    <div class="messages" id="messages">
 
+      <div id="instructions" class="instructions">
 
-    
+        <div class="instructions-text">
+          Please Choose a car by using 
+          <br>
+          Right and Left Arrows.
+          <br><br>
+          Press "Enter" to 
+          <br>
+          Start/Pause the game!
+        </div>
+      </div>
+
+     
+
+      
+      
+      
+      <div class="choose-car">
+        <ul class="choose-car-list">
+          <li class="choose-car-list-item" id="left-arrow">
+            <
+          </li>
+          <li class="choose-car-list-item" id="choose-car-container">
+            <img id="choose-car" src="src/images/car0.png" />
+          </li>
+          <li class="choose-car-list-item" id="right-arrow">
+            >
+          </li>
+        </ul>
+      </div>
+      
+      
+    </div>
 
 
 

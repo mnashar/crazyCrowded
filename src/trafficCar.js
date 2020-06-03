@@ -4,7 +4,8 @@ export default class TrafficCar{
         this.context=this.game.context;
         this.car=new Image;
         
-        this.carNo=Math.round(Math.random()*7)+1;
+        this.carNo=Math.round(Math.random()*8);
+        
         this.car.src = "src/images/car" + this.carNo+".png";
         this.positionY=-120;
         this.positionY=(Math.random()*500)*-1;
@@ -19,6 +20,7 @@ export default class TrafficCar{
         // this.width = 42;
         this.length = 73;
         this.width = 28;
+        
     }
 
     get positionX(){

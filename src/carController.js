@@ -1,7 +1,7 @@
 export default class carController{
 
     constructor(game){
-        // debugger;
+        
         this.game = game;
         this.road=game.road;
         this.playerCar=game.playerCar;
@@ -9,7 +9,9 @@ export default class carController{
     }
 
     init(){
+        
         document.addEventListener("keydown",(e)=>{
+            // alert(e.keyCode);
             switch(e.keyCode){
                 case 37: //left
                     this.playerCar.moveLeft();
@@ -33,6 +35,7 @@ export default class carController{
                     // pauseUnpause();
                     break;
                 default:
+                    
                     break;
             }
         });

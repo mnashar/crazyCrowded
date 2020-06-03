@@ -1,6 +1,7 @@
 export default class playerCar{
 
     constructor(game){
+        
         this.game=game;
         this.context=this.game.context;
         this._positionX = 299;
@@ -8,8 +9,10 @@ export default class playerCar{
         this._speed=25;
         this.maxSpeed=120;
 
+        const chooseCar = document.getElementById("choose-car");
         this.car=new Image;
-        this.car.src = "src/images/Audi.png";
+        // alert(chooseCar.src);
+        this.car.src = chooseCar.src;
         // this.car.length=55;
         // this.car.width = 21;
         // this.length=110;

@@ -1,4 +1,6 @@
 export function isCollide(playerCar,trafficCar){
+    
+
     for(let i=0;i<trafficCar.length;i++){
 
         let x1Condition = trafficCar[i].positionX >= playerCar.positionX 
