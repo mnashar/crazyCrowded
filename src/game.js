@@ -43,20 +43,20 @@ export default class Game{
         if(this.paused) return;
         // if (!this.justStarted && this.paused) return;
 
-        console.log("array: " + this.carNos);
+        //console.log("array: " + this.carNos);
 
 
         let trafficCar=new TrafficCar(this);
-         console.log("array: "+this.carNos);
+         //console.log("array: "+this.carNos);
         if (this.carNos.indexOf(trafficCar.lane)==-1){
-             console.log("carNo: "+trafficCar.carNo);
+             //console.log("carNo: "+trafficCar.carNo);
             if (trafficCar.carNo!==this.selectedCarNo){
                 this.trafficCar.push(trafficCar);
                 this.carNos.push(trafficCar.lane);
             }
         }
         else{
-            console.log("Existing carNo: " + trafficCar.carNo+"  Lane: "+trafficCar.lane);
+            //console.log("Existing carNo: " + trafficCar.carNo+"  Lane: "+trafficCar.lane);
         }
 
         this.playerCar.speed+=1;
