@@ -13,6 +13,7 @@ export default class Game{
         this.scoreboard=new Scoreboard(this);
         this.paused=false;
         this.justStarted=true;
+        
        
         this.CarController=new CarController(this);
 
